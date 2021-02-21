@@ -1,10 +1,14 @@
 import './App.css';
-import HeroCotainer from "./components/hero-container/HeroContainer";
+// import HeroCotainer from "./components/hero-container/HeroContainer";
+
+import Header from "./components/header/Header";
+import Browse from "./components/browse/Browse";
 
 function App() {
   return (
     <div className="App">
-      <HeroCotainer />
+          <Header />
+          <Browse />
     </div>
   );
 }
