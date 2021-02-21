@@ -1,5 +1,8 @@
 import React from 'react'
 import "./Header.css";
+import MenuIcon from '@material-ui/icons/Menu';
+import SearchIcon from '@material-ui/icons/Search';
+import ShuffleIcon from '@material-ui/icons/Shuffle';
 
 function Header() {
     return (
@@ -22,6 +25,12 @@ function Header() {
                 <span><i className="fas fa-sign-in-alt" id="icon" style={{fontSize: "20px", color: "#b6b6b6"}} ></i></span>
                 <p>Login</p>
                
+            </div>
+
+            <div className="header__burger">
+                <ShuffleIcon className="icon"/>
+                <SearchIcon className="icon"/>
+                <MenuIcon className="icon"/>
             </div>
         </div>
     )
