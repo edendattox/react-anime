@@ -4,7 +4,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
 import ShuffleIcon from '@material-ui/icons/Shuffle';
 
-function Header() {
+function Header({handelSearch, search}) {
     return (
         <div className="header">
            <div className="header__left">
@@ -16,11 +16,16 @@ function Header() {
           </div>
 
             <div className="header__right">
+              <form className="search-box" onSubmit={handelSearch}>
               <input
                 type="text"
                 placeholder="Search..." 
+                value={search}
                 style={{backgroundColor: "#161616", padding: "15px", border: "1px solid #b6b6b6", width: "400px", borderRadius: ".5em", color: "#b6b6b6" }}
-                />
+                required 
+                // onChange={}           
+             />
+                </form>
                 <span ><i className="fab fa-discord" id="icon" style={{fontSize: "30px", color: "#b6b6b6"}} ></i></span>
                 <span><i className="fas fa-sign-in-alt" id="icon" style={{fontSize: "20px", color: "#b6b6b6"}} ></i></span>
                 <p>Login</p>
@@ -37,5 +42,3 @@ function Header() {
 }
 
 export default Header;
-
-// className="header__links"

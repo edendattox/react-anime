@@ -1,0 +1,13 @@
+.cardFront {
+  height: 300px;
+  width: 190px;
+}
+
+h4 {
+  color: white;
+  font-size: 14px;
+  font-weight: 350;
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* justify-content: center; */
+}

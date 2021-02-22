@@ -1,0 +1,24 @@
+.heroContainer {
+  margin-top: 30px;
+  padding: 0 10px;
+  display: flex;
+  flex-direction: column;
+  color: aquamarine;
+}
+
+.home__title {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+h3 {
+  color: white;
+  font-size: 18px;
+  font-weight: 350;
+}
+
+.home__anime {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
