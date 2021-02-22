@@ -4,6 +4,7 @@ import CardFront from "../cardFront/CardFront";
 
 import { AnimeAiringContext} from "../../context/AiringContext";
 import {  AnimePopularContext} from "../../context/Popular";
+import Footer from "../footer/Footer";
 
 function Home() {
 
@@ -46,7 +47,19 @@ function Home() {
                     />
                 ))
               }
+            
+             <div className="donate">
+               <h3>We need your help to keep going. By donating you can help us to keep the site alive and even upgrade the servers for a better experience.
+               Don't forget to join our discord community!</h3>
+             </div>
 
+             <div className="donate__button">
+                 <button></button>
+             </div>
+
+            <div className="footer">
+                <Footer />
+            </div>
 
             </div>
 

@@ -26,3 +26,20 @@ h3 {
   flex-wrap: wrap;
   justify-content: space-between;
 }
+
+.donate {
+  margin-top: 100px;
+  width: 80%;
+  margin: 100px auto;
+  text-align: center;
+}
+
+.donate > h3 {
+  color: #b6b6b6;
+  font-size: 1.2em;
+  font-weight: 400px;
+}
+
+.footer {
+  margin-top: 40px;
+}
