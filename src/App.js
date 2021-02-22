@@ -11,30 +11,31 @@ import {
 } from "react-router-dom";
 import Results from "./page/Results";
 import SingleView from "./page/SingleView";
+import {AiringProvider} from "./context/AiringContext"
+import {PopularProvider} from "./context/Popular"
 
-// import Browse from "./components/browse/Browse";
 
 export const AnimeContext = createContext();
 
 function App() {
   const [animeList, setAnimeList] = useState([]);
-	const [topAnime, setTopAnime] = useState([]);
+	// const [airing, setAiring] = useState([]);
   const [upComingAnime, setUpComingAnime] = useState([]);
 	const [search, setSearch] = useState("");
 
-  const GetTopAnime = async () => {
-		const temp = await fetch(`https://api.jikan.moe/v3/top/anime/1/bypopularity`)
-			.then(res => res.json());
+  // const GetTopAnime = async () => {
+	// 	const temp = await fetch(`https://api.jikan.moe/v3/top/anime/1/airing`)
+  //       .then(data => data.json());
 
-		setTopAnime(temp.top.slice(0, 7));
-	}
+	//   	setAiring(temp.top.slice(0, 7));
+	// }
 
-  const UpComingAnime = async () => {
-    const temp = await fetch(`https://api.jikan.moe/v3/top/anime/1/upcoming`)
-       .then(res => res.json());
+  // const UpComingAnime = async () => {
+  //   const temp = await fetch(`https://api.jikan.moe/v3/top/anime/1/upcoming`)
+  //      .then(res => res.json());
 
-       setUpComingAnime(temp.top.slice(0, 7))
-  }
+  //      setUpComingAnime(temp.top.slice(0, 7))
+  // }
 
 	const HandleSearch = e => {
 		e.preventDefault();
@@ -49,23 +50,24 @@ function App() {
 		setAnimeList(temp.results);
 	}
 
-	useEffect(() => {
-		GetTopAnime();
-	}, []);
+	// useEffect(() => {
+	// 	GetTopAnime();
+	// }, []);
 
-  console.log(topAnime)
+  // console.log(airing)
 
   // value={[upComingAnime, setUpComingAnime]}
 
   return (
+    <AiringProvider>
+      <PopularProvider>
     <div className="App">
           
-  <AnimeContext.Provider value={[ topAnime, setTopAnime]}  >
           <Router>
           <Header />
              <Switch>
                <Route path="/" exact >
-                 <Home topAnime={topAnime}/>
+                 <Home />
                 </Route>
                <Route path="/results" exact >
                 <Results />
@@ -76,8 +78,9 @@ function App() {
              </Switch>
           </Router>
 
-          </AnimeContext.Provider>
           </div>  
+          </PopularProvider>
+          </AiringProvider>
   );
 }
 

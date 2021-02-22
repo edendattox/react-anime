@@ -2,21 +2,23 @@ import React, {useContext} from 'react';
 import "./Home.css";
 import CardFront from "../cardFront/CardFront";
 
-import {AnimeContext} from "../../App"
+import { AnimeAiringContext} from "../../context/AiringContext";
+import {  AnimePopularContext} from "../../context/Popular";
 
 function Home() {
 
-    const [topAnime, setTopAnime] = useContext(AnimeContext);
+    const [airing, setAiring] = useContext( AnimeAiringContext);
+    const [popular, setPopular] = useContext(  AnimePopularContext);
     
     return (
         <div className="home">
             <div className="home__title">
-             <h3>Popular</h3>
+             <h3>Recently Added</h3>
             </div>
             
             <div className="home__anime">
               {
-                  topAnime.map(anime => (
+                  airing.map(anime => (
                     <CardFront
                     className="cardFront__style"
                     key={anime.mal_id}
@@ -28,13 +30,13 @@ function Home() {
               }
             </div>
             
-            <div className="home__title">
-                 <h3>UpComing Anime</h3>
+            <div className="home__title__two">
+                 <h3>Popular This Week</h3>
             </div>
 
             <div className="home__anime">
              {
-                 topAnime.map(anime => (
+                 popular.map(anime => (
                     <CardFront
                     className="cardFront__style"
                     key={anime.mal_id}

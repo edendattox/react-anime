@@ -3,7 +3,6 @@
   padding: 0 10px;
   display: flex;
   flex-direction: column;
-  color: aquamarine;
 }
 
 .home__title {
@@ -11,10 +10,15 @@
   margin-bottom: 20px;
 }
 
+.home__title__two {
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
 h3 {
   color: white;
   font-size: 18px;
-  font-weight: 350;
+  font-weight: 450;
 }
 
 .home__anime {
