@@ -4,14 +4,19 @@ import "./Footer.css";
 function Footer() {
     return (
         <div className="footer">
-            <span><a href="#">News</a></span>
-            <span><a href="#">FAQ</a></span>
-            <span><a href="#">Reddit</a></span>
-            <span><a href="#">Hall of Fame</a></span>
-            <span><a href="#">Donate</a></span>
-            <span><a href="#">Privacy</a></span>
-            <span><a href="#">Password</a></span>
-            <span><a href="#">Simply</a></span>
+            <div className="footer__top">
+             <div className="item"><a href="#">News</a></div>
+             <div className="item"><a href="#">FAQ</a></div>
+             <div className="item"><a href="#">Reddit</a></div>
+             <div className="item"><a href="#">Hall of Fame</a></div>
+            </div>
+
+        <div className="footer__bottom">
+            <div className="item"><a href="#">Donate</a></div>
+            <div className="item"><a href="#">Privacy</a></div>
+            <div className="item"><a href="#">Password</a></div>
+            <div className="item"><a href="#">Simply</a></div>
+        </div> 
         </div>
     )
 }

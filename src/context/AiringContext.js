@@ -17,7 +17,6 @@ export const AiringProvider = (props) => {
 		GetTopAnime();
 	}, []);
 
-  console.log(airing)
 
 
     return (

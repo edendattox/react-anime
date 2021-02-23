@@ -5,6 +5,7 @@ import CardFront from "../cardFront/CardFront";
 import { AnimeAiringContext} from "../../context/AiringContext";
 import {  AnimePopularContext} from "../../context/Popular";
 import Footer from "../footer/Footer";
+import Button from '@material-ui/core/Button';
 
 function Home() {
 
@@ -48,22 +49,35 @@ function Home() {
                 ))
               }
             
+            <div className="middle__container">
              <div className="donate">
                <h3>We need your help to keep going. By donating you can help us to keep the site alive and even upgrade the servers for a better experience.
                Don't forget to join our discord community!</h3>
              </div>
 
              <div className="donate__button">
-                 <button></button>
+               <div className="donate__button__text">
+                <h3>The donation amount is manually updated every few days.</h3>
+                </div>
+                 <Button className="button" >DONATE</Button>
              </div>
 
-            <div className="footer">
+             <div className="bar" style={{cursor: "pointer"}}>
+               <div className="bar__bar">
+               </div>
+               <div className="bar__text">
+                    <h3> $781.30 / $1140.00 for January</h3>
+                 </div>
+            </div>
+
+            </div>
+
+         <div className="footer">
                 <Footer />
+            </div> 
+           
+     
             </div>
-
-            </div>
-
-         
         </div>
     )
 }

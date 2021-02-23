@@ -1,9 +1,10 @@
 import React from 'react'
+import SearchContent from "../components/searchContent/SearchContent";
 
 function Results() {
     return (
         <div>
-            <h1>results</h1>
+            <SearchContent /> 
         </div>
     )
 }

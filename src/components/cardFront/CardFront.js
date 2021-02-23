@@ -10,11 +10,19 @@ function CardFront({title, img}) {
             alt="hl"
            height="280px"
            width="190px"
+           style={{
+           cursor: "pointer"
+           }}
          />
         </div>
       
        <div className="cardFront__title">
-          <h4>{title}</h4>
+          <h4  
+           style={{
+           cursor: "pointer"
+           }}
+           >
+             {title}</h4>
           </div>
       </div>
 
