@@ -7,11 +7,12 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
-import SingleView from "./page/SingleView";
+// import SingleView from "./page/SingleView";
 import {AiringProvider} from "./context/AiringContext";
 import {PopularProvider} from "./context/Popular";
 import Browse from "./page/Browse";
 import Header from "./components/header/Header";
+import Random from "./page/random";
 
 function App() {
  
@@ -34,7 +35,7 @@ function App() {
                 </Route>
 
                <Route path="/random" exact >
-                <SingleView />
+                <Random />
                 </Route>
              </Switch>
           </Router>

@@ -2,13 +2,12 @@ import React, {useContext} from 'react'
 import {AnimePopularContext} from "../context/Popular"; 
 import CardFront from "../components/cardFront/CardFront";
 
-function Browse() {
-    const [popular] = useContext(  AnimePopularContext);
-
+const Random = () => {
+    const [popular] = useContext(AnimePopularContext);
 
     return (
-        <div className="Browse">
-               <div className="browse__anime">
+              <div className="Random">
+               <div className="Random__anime">
               {
                   popular.map(anime => (
                     <CardFront
@@ -25,4 +24,4 @@ function Browse() {
     )
 }
 
-export default Browse
+export default Random;

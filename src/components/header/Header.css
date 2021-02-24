@@ -15,12 +15,12 @@
   align-items: center;
 }
 
-.header__left > .logo {
+.logo {
   height: 54px;
   width: 50px;
 }
 
-.header__left > span {
+span {
   color: #b6b6b6;
   font-size: 16px;
   line-height: normal;
