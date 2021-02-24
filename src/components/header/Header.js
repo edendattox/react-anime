@@ -1,26 +1,28 @@
-import React, {useState, useEffect, createContext}  from 'react'
+import React,{useState, useEffect} from 'react'
 import "./Header.css";
 import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
 import ShuffleIcon from '@material-ui/icons/Shuffle';
-import {NavLink} from "react-router-dom";
 
-export const AnimeSearchContext = createContext();
 
-export const HeaderProvider = () => {
 
-  const [animelist, setAnimelist] = useState([]);
-	const [search, setSearch] = useState("");
 
-    
-	const HandleSearch = e => {
+
+export const HeaderContent = () => {
+
+    const [search, setSearch] = useState("");
+    const [animelist, setAnimelist] = useState([]);
+
+    const HandleSearch = e => {
 		e.preventDefault();
 
     FetchAnime(search);
+    setSearch("")
     console.log(search)
+
 	}
 
-	const FetchAnime = async (query) => {
+    const FetchAnime = async (query) => {
 		const temp = await fetch(`https://api.jikan.moe/v3/search/anime?q=${query}&order_by=title&sort=asc&limit=10`)
 			.then(res => res.json());
 
@@ -30,31 +32,28 @@ export const HeaderProvider = () => {
 
 }
 
-     // useEffect(() => {
-  //   FetchAnime();
-	// }, []);
 
- 
+     useEffect(() => {
+    FetchAnime();
+	}, []);
+
 
     return (
-      <AnimeSearchContext.Provider value={[ animelist, setAnimelist]}>
-        <div className="header">
+    
+       <div className="header">
            <div className="header__left">
-           <NavLink>
             <img 
-            to="/"
             className="logo"
              src="https://4anime.co/static/logo.png"
               alt="logo" 
              />
-            </NavLink>
             <span >Browse</span>
             <span >Random</span>
             <span >Genre</span>
-          </div>
 
+          </div>
             <div className="header__right">
-              <form className="search-box" onSubmit={HandleSearch}>
+               <form className="search-box" onSubmit={HandleSearch}>
               <input
                 type="search"
                 placeholder="Search..." 
@@ -70,9 +69,8 @@ export const HeaderProvider = () => {
                   color: "#b6b6b6"
                    }}
              />
+             </form>
 
-
-                </form>
                 <span ><i className="fab fa-discord" id="icon" style={{fontSize: "30px", color: "#b6b6b6"}} ></i></span>
                 <span><i className="fas fa-sign-in-alt" id="icon" style={{fontSize: "20px", color: "#b6b6b6"}} ></i></span>
                 <p>Login</p>
@@ -83,11 +81,11 @@ export const HeaderProvider = () => {
                 <ShuffleIcon className="icon"/>
                 <SearchIcon className="icon"/>
                 <MenuIcon className="icon"/>
+       
             </div>
-        </div>
-        </AnimeSearchContext.Provider>
+       </div>
 
     )
 }
 
-export default HeaderProvider;
+export default HeaderContent;

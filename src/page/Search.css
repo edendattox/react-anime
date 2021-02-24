@@ -1,0 +1,11 @@
+.search {
+  background-color: aqua;
+  height: 1000px;
+  display: flex;
+}
+
+.search > .search__anime {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
